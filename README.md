@@ -935,39 +935,7 @@ Método equals:
 El método equals y hashCode
 Mientras que es muy habitual usar el operador == para comparar tipos básicos no es tan habitual usarlo a la hora de comparar objetos ya que no tiene sentido a nivel de reglas de negocio. Por ejemplo en este caso a nivel de negocio consideraremos dos objetos iguales si tienen el mismo nombre. Por lo tanto deberemos sobreescribir el método equals y hashcode  de la clase Persona y hacer que dos objetos  Persona sean iguales si su nombre coincide  :
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
+
 package com.arquitecturajava;
  
 public class Persona {
@@ -1003,20 +971,7 @@ return p.getNombre().equals(this.getNombre());
 }
 Acabamos de sobreescribir los métodos (de forma simplificada) . Ahora podemos usar el método equals para comparar los siguientes objetos y nos devolverá true.
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
+
 package com.arquitecturajava;
  
 public class Principal4 {
@@ -1071,6 +1026,100 @@ Palíndromos en Java con reverse
 Remplazar caracteres con Java
 
 
+
+
+
+
+Método String charAt ():
+
+¿Por qué usar el método de cadena “chatAt”?
+
+El método de charat devuelve el carácter en el índice definido. En este método, el valor del índice debe estar entre 0 y la longitud de la cadena menos 1
+
+Sintaxis del método:
+
+public char charAt(int index)
+1
+public char charAt(int index)
+Entrada de parámetros:
+
+index – Este método de Java acepta solo una entrada, que es un tipo de datos int.
+
+Método de devoluciones:
+
+Este método devuelve datos de tipo de caracteres basados ​​en la entrada de índice
+
+
+
+
+Excepción:
+
+Lanza java.lang.StringIndexOutOfBoundsException si el valor del índice no está entre 0 y String length menos uno
+
+Ejemplo 1:
+
+
+public class CharAtGuru99 {
+public static void main(String args[]) {
+String s1 = "This is String CharAt Method";
+//returns the char value at the 0 index
+System.out.println("Character at 0 position is: " + s1.charAt(0));
+//returns the char value at the 5th index
+System.out.println("Character at 5th position is: " + s1.charAt(5));
+//returns the char value at the 22nd index
+System.out.println("Character at 22nd position is: " + s1.charAt(22));
+//returns the char value at the 23th index
+char result = s1.charAt(-1);
+System.out.println("Character at 23th position is: " + result);
+}
+}
+
+
+
+public class CharAtGuru99 {
+    public static void main(String args[]) {
+        String s1 = "This is String CharAt Method";
+        //returns the char value at the 0 index
+        System.out.println("Character at 0 position is: " + s1.charAt(0));
+        //returns the char value at the 5th index
+        System.out.println("Character at 5th position is: " + s1.charAt(5));
+        //returns the char value at the 22nd index
+        System.out.println("Character at 22nd position is: " + s1.charAt(22));
+        //returns the char value at the 23th index
+        char result = s1.charAt(-1);
+        System.out.println("Character at 23th position is: " + result);
+    }
+}
+Salida:
+
+El personaje en la posición 0 es: T El
+personaje en la quinta posición es: i El
+personaje en la posición 22 es: M
+
+Excepción en el hilo “principal” java.lang.StringIndexOutOfBoundsException: Índice de cadena fuera de rango: -1
+
+Algunas cosas importantes sobre este método Java charAt:
+
+Este método Java toma un argumento que siempre es de tipo int.
+Este método devuelve el carácter como char para el argumento int dado. El valor int especifica el índice que comienza en 0.
+Si el valor del índice es mayor que la longitud de la cadena o un valor negativo, se produce un error de excepción de IndexOutOfBounds.
+El rango de índice debe estar entre 0 y string_length-1.
+ 
+
+
+← Prev
+Next →
+0
+REPLIES
+Leave a Reply
+Want to join the discussion?
+Feel free to contribute!
+
+Name *
+
+Email *
+
+Website
 
 
 
@@ -1191,6 +1240,8 @@ public class String8 {
         return aux.toString();
     }
 }
+
+
 
 
 
