@@ -1,0 +1,90 @@
+
+/*Muestra cómo obtener la longitud de una cadena de caracteres
+ * e investiga la posición de un determinado carácter
+ */
+ 
+ ****************************************************************************
+ package ejerciciosstring;
+
+public class NumberError extends Exception {
+	public NumberError() {
+		super("ERROR");
+	}
+}
+
+ ****************************************************************************
+ 
+  ****************************************************************************
+package ejerciciosstring;
+
+public class NumberError2 extends Exception {
+
+	public NumberError2() {
+		super("ERROR");
+	}
+
+}
+
+ ****************************************************************************
+
+package ejerciciosstring;
+
+import java.awt.HeadlessException;
+
+import javax.swing.JOptionPane;
+
+public class ejercicioLibro {
+static String cadena;
+static String cadena2;
+static char cadena3;
+
+	public static int longitud(String cadena) throws NumberError{
+		//Verifica que la cadena escrita es String
+		if (cadena.matches("^[A-Za-z ]*$")) {
+		//En caso de que si muestra la longitud de la cadena de caracteres
+			int longitud=cadena.length();
+			return longitud;
+		}else {
+		//En caso de que sea int se muestra error
+			throw new NumberError();
+		}
+	}
+	public static void encontrarLetra(String cadena2, String cadena) throws NumberError2{
+		//Verifica que el dato introducido es String
+		if(cadena2.matches("^[A-Za-z ]*$")) {
+		
+		//Pregunta si la cadena contiene la letra
+			if(cadena.contains(cadena2)) {
+				
+		//En caso de que si calcula la posición de la letra y la imprime
+				int posicion=cadena.indexOf(cadena2);
+				JOptionPane.showMessageDialog(null, "La posición de la letra en la cadena de caracteres es= "+posicion);
+			}else {
+				JOptionPane.showMessageDialog(null, "La letra no se encuentra en la cadena de caracteres");
+			}
+		}else {
+		//En caso de que sea int se muestra error
+			throw new NumberError2();
+		}
+	}
+
+	public static void main(String[] args) throws NumberError2{
+		//Escribe un caracter en consola el usuario
+		try {
+		cadena=JOptionPane.showInputDialog("Escribe una cadena de caracteres");
+		//Muestra la longitud
+		
+			JOptionPane.showMessageDialog(null, "La longitud de la cadena de caracteres es= "+ejercicioLibro.longitud(cadena));
+		} catch (NumberError e) {
+			JOptionPane.showMessageDialog(null, "Los datos introducidos no son cadenas de caracteres");
+		}
+		try {
+		//Escribe una letra en consola el usuario
+		cadena2=JOptionPane.showInputDialog("Escribe una letra");
+		//Muestra si esa letra está dentro del caracter y en qué posición
+		ejercicioLibro.encontrarLetra(cadena2, cadena);
+		}catch(NumberError2 exc) {
+			JOptionPane.showMessageDialog(null, "Los datos introducidos no son cadenas de caracteres");
+		}
+	}
+}
