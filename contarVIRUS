@@ -1,0 +1,38 @@
+
+/*int buscarVIRUS( String parámetro)
+  Me devuelve un entero con el número de veces que aparece la subcadena VIRUS en la cadena pasada como parámetro.
+*/
+
+package ejerciciosstring;
+
+import javax.swing.JOptionPane;
+
+public class ejercicioVirus {
+static String virus;
+static int contadorVirus=0;
+static String caracter;
+static int posicion;
+
+	public static void buscarVirus(String virus,String caracter) {
+		//Se busca la primera vez que aparece la subcadena VIRUS
+		posicion=virus.indexOf(caracter);
+		
+		//Mientras que se encuentre VIRUS, -1 es cuando ya no se encuentran subcadenas VIRUS	
+		while(posicion!=-1) { 
+		//Se aumenta el contador de VIRUS
+			contadorVirus++;
+		//Se sigue buscando a partir de la siguiente posición
+			posicion=virus.indexOf(caracter,posicion+1);
+			
+		}
+		JOptionPane.showMessageDialog(null,"El número de virus de la cadena de caracteres es= "+contadorVirus);
+		
+	}
+	public static void main(String[] args) {
+		caracter="VIRUS";
+		virus="HAY UN VIRUS VIRUS VIRUS VIRUSVIRUSVIRUS";
+		JOptionPane.showMessageDialog(null,"La cadena de caracteres es= "+virus);
+		ejercicioVirus.buscarVirus(virus,caracter);
+	}
+
+}
