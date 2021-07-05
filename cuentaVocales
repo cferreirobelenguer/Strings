@@ -1,0 +1,38 @@
+/*int cuentaVocales(String parámetro)
+ * Me devuelve el número de vocales que tiene la cadena pasada como parámetro
+ */
+
+package ejerciciosstring;
+
+import javax.swing.JOptionPane;
+
+public class ejerciciosString {
+	static int contadorvocal;
+	static int resultado;
+	public static int cuentaVocales(String parametro) {
+		for(int i=0;i<parametro.length();i++) {
+			if(parametro.charAt(i)=='a'){
+				contadorvocal++;
+			}else if(parametro.charAt(i)=='e') {
+				contadorvocal++;
+				
+			}else if(parametro.charAt(i)=='i') {
+				contadorvocal++;
+				
+			}else if(parametro.charAt(i)=='o') {
+				contadorvocal++;
+				
+			}else if (parametro.charAt(i)=='u') {
+				contadorvocal++;
+				
+				}
+			
+			}
+		return contadorvocal;
+		}
+	public static void main(String[] args) {
+		String parametro="Hola Mundo";
+		JOptionPane.showInternalMessageDialog(null,"El recuento de vocales es la cadena de caracteres "+parametro+" es "+ejerciciosString.cuentaVocales(parametro));
+	}
+
+}
