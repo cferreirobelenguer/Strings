@@ -4,26 +4,26 @@
  */
  
  ****************************************************************************
- package ejerciciosstring;
+/* package ejerciciosstring;
 
-public class NumberError extends Exception {
-	public NumberError() {
-		super("ERROR");
-	}
-}
+/* public class NumberError extends Exception {
+/*	public NumberError() {
+/*		super("ERROR");
+/*	}
+/* }
 
  ****************************************************************************
  
   ****************************************************************************
-package ejerciciosstring;
+/* package ejerciciosstring;
 
-public class NumberError2 extends Exception {
+/* public class NumberError2 extends Exception {
 
-	public NumberError2() {
-		super("ERROR");
-	}
+/*	public NumberError2() {
+/*		super("ERROR");
+/*	}
 
-}
+/* }
 
  ****************************************************************************
 
