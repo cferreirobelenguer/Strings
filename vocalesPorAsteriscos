@@ -1,0 +1,24 @@
+/*2.-   String  OcultaVocales ( String parámetro)
+Devuelve una cadena que cambia las vocales por asteriscos
+   cadenares  = OcultaVocales("Que calor");
+    El valor de cadenares   "Qu* c*l*r"
+*/
+
+package ejerciciosstring;
+
+import javax.swing.JOptionPane;
+
+public class OcultaVocales {
+	static String oculta;
+	static String vocales;
+	public static String ocultaVocales(String caracter,String vocales) {
+		oculta=caracter.replaceAll(vocales, "*");
+		return oculta;
+	}
+	public static void main(String[] args) {
+		String caracter="Hola Mundo";
+		vocales="[aeiouAEIOU]";
+		JOptionPane.showMessageDialog(null,OcultaVocales.ocultaVocales(caracter,vocales));
+	}
+
+}
