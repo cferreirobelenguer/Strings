@@ -1,0 +1,38 @@
+
+/*Calcular la letra del Dni a través del número de DNI
+ */
+
+package ejerciciosstring;
+import java.util.Scanner;
+
+public class numeroDni {
+	static Scanner sc=new Scanner(System.in);
+	static int modulo;
+	static String numero;
+	static String dniCompleto;
+	static char letrachar;
+	static String letra;
+	
+	public static void obtenerLetra(int NumeroDni,char LetrasNIF[]) {
+		
+		//Para calcular la letra del dni primero se calcula el resto de 23 para calcular el índice
+		modulo=NumeroDni%23;
+		
+		//A través de ese índice del array se calcula la letra del Dni
+		letrachar=LetrasNIF[modulo];
+		letra=String.valueOf(letrachar);
+		System.out.println("La letra de tu DNI es= "+letra);
+		numero=String.valueOf(NumeroDni);
+		
+		//Para concatenar número y letra se tienen que pasar ambos a String y luego sumarlos
+		dniCompleto=numero+letra;
+		System.out.println("Tu DNI completo es= "+dniCompleto);
+	}
+
+	public static void main(String[] args) {
+		char LetrasNIF[]= {'T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E'};
+		int NumeroDni=62584268;
+		numeroDni.obtenerLetra(NumeroDni, LetrasNIF);
+	}
+
+}
