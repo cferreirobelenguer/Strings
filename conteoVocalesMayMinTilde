@@ -1,0 +1,33 @@
+
+/*Crear un clase que tenga un método principal que incorpore el conteo del número de vocales de una cadena de texto introducida por teclado.
+Tener en cuenta que debe considerar tanto mayúsculas como minúsculas, así como sus variantes con tilde.*/
+
+
+package ejerciciosstring;
+import java.util.Scanner;
+public class conteoVocales {
+	static Scanner sc=new Scanner(System.in);
+	static int contadorVocales=0;
+	public static void contearVocales(String palabra) {
+		for(int i=0;i<=palabra.length()-1;i++) {
+			if((palabra.charAt(i)=='a')||(palabra.charAt(i)=='A')||(palabra.charAt(i)=='á')||(palabra.charAt(i)=='Á')) {
+				contadorVocales++;
+			}else if((palabra.charAt(i)=='e')||(palabra.charAt(i)=='E')||(palabra.charAt(i)=='é')||(palabra.charAt(i)=='É')){
+				contadorVocales++;
+			}else if((palabra.charAt(i)=='i')||(palabra.charAt(i)=='I')||(palabra.charAt(i)=='í')||(palabra.charAt(i)=='Í')){
+				contadorVocales++;
+			}else if((palabra.charAt(i)=='o')||(palabra.charAt(i)=='O')||(palabra.charAt(i)=='ó')||(palabra.charAt(i)=='Ó')){
+				contadorVocales++;
+			}else if((palabra.charAt(i)=='u')||(palabra.charAt(i)=='U')||(palabra.charAt(i)=='ú')||(palabra.charAt(i)=='Ú')){
+				contadorVocales++;
+			}
+		}
+		System.out.println("La cadena de caracteres "+palabra+" tiene "+contadorVocales+" vocales");
+	}
+	public static void main(String[] args) {
+		String palabra="Java es muy way";
+		conteoVocales.contearVocales(palabra);
+
+	}
+
+}
