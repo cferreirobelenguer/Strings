@@ -1,0 +1,38 @@
+/*Ejercicio que usuario escribe en consola un indice y según el índice de 0 a la mitad 
+ * imprime la mitad del String , y de la mitad del indice al final 
+ * imprime la otra mitad del String.
+ * Ejemplo: Hola
+ * De 0 a 2 imprime Ho
+ * De 2 a 4 imprime la
+ */
+
+package ejerciciosstring;
+import java.util.Scanner;
+
+public class twoChar {
+	static Scanner sc=new Scanner(System.in);
+	static int posicion;
+	public static void twochar(String str,char[]index) {
+		if(posicion>index.length) {
+			System.out.println("El número introducido es mayor que la longitud del array");
+		}else {
+			if((posicion>=0)&&(posicion<=index.length/2)){
+				for(int i=0;i<str.length()/2;i++) {
+					System.out.print(str.charAt(i));
+				}
+			}else if((posicion>index.length/2)&&(posicion<=index.length-1)) {
+				for(int i=str.length()/2;i<str.length();i++) {
+					System.out.print(str.charAt(i));
+				}
+			}
+		}
+	}
+	public static void main(String[] args) {
+		String str="Hola";
+		char[]index=str.toCharArray();
+		System.out.println("Introduzca posición");
+		posicion=sc.nextInt();
+		twoChar.twochar(str, index);
+	}
+
+}
