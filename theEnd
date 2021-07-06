@@ -1,0 +1,58 @@
+
+/*Dada una cadena, devuelve una longitud de cadena 1 desde su frente, a menos que front sea falso,
+ *  en cuyo caso devuelve una longitud de cadena 1 desde su parte posterior. La cadena no estará vacía.
+ *  
+ *  theEnd("Hello", true) → "H"
+	theEnd("Hello", false) → "o"
+	theEnd("oh", true) → "o"
+ */
+
+
+package ejerciciosstring;
+import java.util.Scanner;
+
+public class theEndd {
+static Scanner sc=new Scanner(System.in);
+static String palabra;
+static char letra;
+static boolean principiofin;
+static String principio;
+
+	public static void principio(String principio) throws SoloTrueFalse{
+		
+		if((principio.equals("true"))||(principio.equals("TRUE"))||(principio.equals("FALSE"))||(principio.equals("false"))) {
+		principiofin=Boolean.valueOf(principio);
+		}else {
+			throw new SoloTrueFalse();
+		}
+		
+	}
+	public static void principioFin(String palabra,boolean principiofin) {
+		if(palabra.length()>=1) {
+			if(principiofin==true) {
+				letra=palabra.charAt(0);
+				System.out.println(letra);
+			}else if(principiofin==false) {
+				letra=palabra.charAt(palabra.length()-1);
+				System.out.println(letra);
+			}
+		}else {
+			System.out.println("No se puede realizar la operación");
+		}
+	
+}
+	public static void main(String[] args) {
+		palabra="HOLA MUNDO";
+		System.out.println("Elije entre true o false");
+		principio=sc.next();
+		try {
+			theEndd.principio(principio);
+		} catch (SoloTrueFalse e) {
+			System.out.println("Los datos introducidos no son true o false");
+			System.exit(0);
+			}
+		theEndd.principioFin(palabra, principiofin);
+	
+	}
+
+}
