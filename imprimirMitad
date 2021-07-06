@@ -13,7 +13,7 @@ public class twoChar {
 	static Scanner sc=new Scanner(System.in);
 	static int posicion;
 	public static void twochar(String str,char[]index) {
-		if(posicion>index.length) {
+		if(posicion>=index.length) {
 			System.out.println("El número introducido es mayor que la longitud del array");
 		}else {
 			if((posicion>=0)&&(posicion<=index.length/2)){
@@ -21,7 +21,7 @@ public class twoChar {
 					System.out.print(str.charAt(i));
 				}
 			}else if((posicion>index.length/2)&&(posicion<=index.length-1)) {
-				for(int i=str.length()/2;i<str.length();i++) {
+				for(int i=str.length()/2;i<=str.length()-1;i++) {
 					System.out.print(str.charAt(i));
 				}
 			}
