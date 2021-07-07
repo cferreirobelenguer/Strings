@@ -1659,3 +1659,464 @@ Como obtener la raíz cuadrada de un número con Java
 Contar las vocales de un fichero en Java
 String: Primera letra de cada palabra en mayúscula
 Convertir una cadena en un array de caracteres con Java
+
+
+
+MÉTODO ARRAYSTOSTRING():
+-----------------------
+¿Cómo usar el método Arrays.toString ()?
+
+Descripción:
+Devuelve una representación de cadena del contenido de la matriz especificada. La representación de la cadena consiste en una lista de los elementos de la matriz, encerrados entre corchetes (“[]”). Los elementos adyacentes están separados por los caracteres "," (una coma seguida de un espacio). Devuelve "nulo" si a es nulo.
+
+En el caso de una matriz de objetos, si la matriz otras matrices como elementos, se contiene en cadenas mediante el método Object.toString () heredado de Object, que describe sus identidades en lugar de su contenido.
+
+Variantes:
+
+
+
+Cadena estática pública toString (boolean [] arr)
+Cadena estática pública toString (byte [] arr)
+Cadena estática pública toString (char [] arr)
+Cadena estática pública toString (doble [] arr)
+Cadena estática pública toString (float [] arr)
+Cadena estática pública toString (int [] arr)
+Cadena estática pública toString (largo [] arr)
+Cadena estática pública toString (Object [] arr)
+Cadena estática pública toString (corto [] arr)
+Parámetros:
+arr - la matriz cuya representación de cadena se devolverá
+
+Devuelve:
+la representación de cadena de arr
+
+Uso:
+El código Java mencionado a continuación describe el uso del método toString () de la clase Arrays con ejemplos:
+
+
+
+                    // Java program to demonstrate working of Arrays.toString()
+                   
+
+                    import 
+                    java.io.*;
+                   
+
+                    import 
+                    java.util.*;
+                   
+
+                      
+                   
+
+                    class 
+                    GFG {
+                   
+
+                        
+                    public 
+                    static 
+                    void 
+                    main(String[] args)
+                   
+
+                        
+                    {
+                   
+
+                            
+                    // Let us create different types of arrays and
+                   
+
+                            
+                    // print their contents using Arrays.toString()
+                   
+
+                            
+                    boolean
+                    [] boolArr = 
+                    new 
+                    boolean
+                    [] { 
+                    true
+                    , 
+                    true
+                    , 
+                    false
+                    , 
+                    true 
+                    };
+                   
+
+                            
+                    byte
+                    [] byteArr = 
+                    new 
+                    byte
+                    [] { 
+                    10
+                    , 
+                    20
+                    , 
+                    30 
+                    };
+                   
+
+                            
+                    char
+                    [] charArr = 
+                    new 
+                    char
+                    [] { 
+                    'g'
+                    , 
+                    'e'
+                    , 
+                    'e'
+                    , 
+                    'k'
+                    , 
+                    's' 
+                    };
+                   
+
+                            
+                    double
+                    [] dblArr = 
+                    new 
+                    double
+                    [] { 
+                    1
+                    , 
+                    2
+                    , 
+                    3
+                    , 
+                    4 
+                    };
+                   
+
+                            
+                    float
+                    [] floatArr = 
+                    new 
+                    float
+                    [] { 
+                    1
+                    , 
+                    2
+                    , 
+                    3
+                    , 
+                    4 
+                    };
+                   
+
+                            
+                    int
+                    [] intArr = 
+                    new 
+                    int
+                    [] { 
+                    1
+                    , 
+                    2
+                    , 
+                    3
+                    , 
+                    4 
+                    };
+                   
+
+                            
+                    long
+                    [] lomgArr = 
+                    new 
+                    long
+                    [] { 
+                    1
+                    , 
+                    2
+                    , 
+                    3
+                    , 
+                    4 
+                    };
+                   
+
+                            
+                    Object[] objArr = 
+                    new 
+                    Object[] { 
+                    1
+                    , 
+                    2
+                    , 
+                    3
+                    , 
+                    4 
+                    };
+                   
+
+                            
+                    short
+                    [] shortArr = 
+                    new 
+                    short
+                    [] { 
+                    1
+                    , 
+                    2
+                    , 
+                    3
+                    , 
+                    4 
+                    };
+                   
+
+                      
+                   
+
+                            
+                    System.out.println(Arrays.toString(boolArr));
+                   
+
+                            
+                    System.out.println(Arrays.toString(byteArr));
+                   
+
+                            
+                    System.out.println(Arrays.toString(charArr));
+                   
+
+                            
+                    System.out.println(Arrays.toString(dblArr));
+                   
+
+                            
+                    System.out.println(Arrays.toString(floatArr));
+                   
+
+                            
+                    System.out.println(Arrays.toString(intArr));
+                   
+
+                            
+                    System.out.println(Arrays.toString(lomgArr));
+                   
+
+                            
+                    System.out.println(Arrays.toString(objArr));
+                   
+
+                            
+                    System.out.println(Arrays.toString(shortArr));
+                   
+
+                        
+                    }
+                   
+
+                    }
+                  
+
+[verdadero, verdadero, falso, verdadero]
+[10, 20, 30]
+[g, e, e, k, s]
+[1.0, 2.0, 3.0, 4.0]
+[1.0, 2.0, 3.0, 4.0]
+[1, 2, 3, 4]
+[1, 2, 3, 4]
+[1, 2, 3, 4]
+[1, 2, 3, 4]
+También podemos usar Arrays.toString () para objetos de clase definida por el usuario.
+Dado que Arrays.toString () está sobrecargado para la matriz de la clase Object (existe un método Arrays.toString (Object [])) y Object es el ancestro de todas las clases, podemos usarlo para una matriz de cualquier tipo de objeto.
+
+
+
+                    // Java program to demonstrate working of Arrays.toString()
+                   
+
+                    // for user defined objects.
+                   
+
+                    import 
+                    java.lang.*;
+                   
+
+                    import 
+                    java.util.*;
+                   
+
+                      
+                   
+
+                    // Driver class
+                   
+
+                    class 
+                    Main {
+                   
+
+                        
+                    public 
+                    static 
+                    void 
+                    main(String[] args)
+                   
+
+                        
+                    {
+                   
+
+                            
+                    Student[] arr = { 
+                    new 
+                    Student(
+                    111
+                    , 
+                    "bbbb"
+                    , 
+                    "london"
+                    ),
+                   
+
+                                              
+                    new 
+                    Student(
+                    131
+                    , 
+                    "aaaa"
+                    , 
+                    "nyc"
+                    ),
+                   
+
+                                              
+                    new 
+                    Student(
+                    121
+                    , 
+                    "cccc"
+                    , 
+                    "jaipur"
+                    ) };
+                   
+
+                      
+                   
+
+                            
+                    System.out.println(Arrays.toString(arr));
+                   
+
+                        
+                    }
+                   
+
+                    }
+                   
+
+                      
+                   
+
+                    // A class to represent a student.
+                   
+
+                    class 
+                    Student {
+                   
+
+                        
+                    int 
+                    rollno;
+                   
+
+                        
+                    String name, address;
+                   
+
+                      
+                   
+
+                        
+                    // Constructor
+                   
+
+                        
+                    public 
+                    Student(
+                    int 
+                    rollno, String name,
+                   
+
+                                       
+                    String address)
+                   
+
+                        
+                    {
+                   
+
+                            
+                    this
+                    .rollno = rollno;
+                   
+
+                            
+                    this
+                    .name = name;
+                   
+
+                            
+                    this
+                    .address = address;
+                   
+
+                        
+                    }
+                   
+
+                      
+                   
+
+                        
+                    // Used to print student details in main()
+                   
+
+                        
+                    @override
+                   
+
+                        
+                    public 
+                    String toString()
+                   
+
+                        
+                    {
+                   
+
+                            
+                    return 
+                    this
+                    .rollno + 
+                    " " 
+                    + 
+                    this
+                    .name + 
+                    " " 
+                    + 
+                    this
+                    .address;
+                   
+
+                        
+                    }
+                   
+
+                    }
+                   
+
+¿Por qué Object.toString () no funciona para matrices?
+Es posible que el método toString () en matrices no funcione. Considera una matriz como un objeto típico y devuelve una cadena predeterminada, es decir, un '[' que representa una matriz, seguido de un carácter que representa el tipo de datos primitivo de la matriz seguido de un código hexadecimal de identidad
