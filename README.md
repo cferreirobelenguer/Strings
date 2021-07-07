@@ -1,5 +1,7 @@
 # ejercicios-de-strings
 
+STRING:
+------
 Cadenas de caracteres.
 
 Probablemente, una de las cosas que más utilizarás cuando estés programando en cualquier lenguaje de programación son las cadenas de
@@ -66,6 +68,10 @@ Fíjate además, que se puede invocar directamente un método de la clase String
 de que al escribir un literal de cadena, se crea una instancia del objeto inmutable String.
 Pero no solo podemos concatenar una cadena a otra cadena. Gracias al método toString() podemos concatenar cadenas con literales
 numéricos e instancias de otros objetos sin problemas.
+
+MÉTODO TOSTRING():
+-----------------
+
 El método toString() es un método disponible en todas las clases de Java. Su objetivo es simple, permitir la conversión de una instancia de
 clase en cadena de texto, de forma que se pueda convertir a texto el contenido de la instancia. Lo de convertir, no siempre es posible, hay clases
 fácilmente convertibles a texto, como es la clase Integer, por ejemplo, y otras que no se pueden convertir, y que el resultado de invocar el
@@ -102,12 +108,24 @@ Operaciones avanzadas con cadenas de caracteres (II).
 Vamos a continuar revisando las operaciones que se pueden realizar con cadenas. Como verás las operaciones a realizar se complican un poco a
 partir de ahora. En todos los ejemplos la variable cad contiene la cadena "¡Bienvenido!", como se muestra en las imágenes.
 
+
+MÉTODO LENGTH():
+---------------
+
 int length(). Retorna un número entero que contiene la longitud de una cadena, resultado de contar el número de caracteres por la que
 está compuesta. Recuerda que un espacio es también un carácter.
+
+
+MÉTODO TOCHARAT():
+-----------------
 
 char charAt(int pos). Retorna el carácter ubicado en la posición pasada por parámetro. El carácter obtenido de dicha posición será
 almacenado en un tipo de dato char. Las posiciones se empiezan a contar desde el 0 (y no desde el 1), y van desde 0 hasta longitud - 1.Por
 ejemplo, el código siguiente mostraría por pantalla el carácter "v":
+
+
+MÉTODO SUBSTRING:
+----------------
 
 String substring(int beginIndex, int endIndex). Este método permite extraer una subcadena de otra de mayor tamaño. Una cadena
 compuesta por todos los caracteres existentes entre la posición beginIndex y la posición endIndex - 1. Por ejemplo, si pusiéramos
@@ -524,6 +542,10 @@ String salida=string.format ("El precio es: %.2f €", precio));
 
 System.out.println(salida);
 
+
+MÉTODO FORMAT():
+----------------
+
 El formato de salida, también denominado "cadena de formato", es el primer argumento del método format. La variable precio, situada como
 segundo argumento, es la variable que se proyectará en la salida siguiendo un formato concreto. Seguro que te preguntarás, ¿qué es "%.2f""?
 Pues es un especi!cador de formato, e indica cómo se deben formatear o proyectar los argumentos que hay después de la cadena de formato
@@ -663,7 +685,8 @@ System.out.println(d);
 
 
 
-
+MÉTODO VALUEOF():
+----------------
 
 String.valueOf() 
 
@@ -704,7 +727,8 @@ int i, Número entero que queremos convertir a cadena
 
 
 
-
+MÉTODO PARSEINT():
+------------------
 
 Integer.parseInt() 
 
@@ -739,7 +763,8 @@ Integer numero = Integer.parseInt("12");
 
 
 
-
+MÉTODO MATCHES:
+--------------
 
 Método matches:
 
@@ -814,7 +839,312 @@ public class PruebaApp {
 }
 El mejor ejemplo para este método es la evaluación de un e-mail, veamos como seria:
 
+MÉTODO INDEXOF:
+---------------
+¿Qué es Java String IndexOf Method?
+El método indexOf se usa para obtener el valor entero de un índice particular de objeto tipo String, en base a los criterios especificados en los parámetros del método IndexOf.
 
+Un escenario común puede ser cuando un administrador del sistema quiere encontrar el índice del carácter ‘@’ del ID de correo electrónico de un cliente y luego desea obtener la subcadena restante. En esa situación, se puede usar el método IndexOf.
+
+Sintaxis
+
+La sintaxis de este método Java es:
+
+public int indexOf (char cha)
+1
+public int indexOf (char cha)
+Parámetros
+
+cha – un personaje.
+
+Este método Java devuelve el índice dentro de esta cadena de la primera aparición del carácter especificado. Devuelve -1 si el caracter no ocurre.
+
+El método Java String IndexOf tiene cuatro sobrecargas. Todas las sobrecargas devuelven un valor de tipo entero, que representa el índice devuelto. Estas sobrecargas difieren en el tipo y la cantidad de parámetros que aceptan.
+
+IndexOf (char b)
+
+Este método devuelve el índice del carácter ‘b’ pasado como parámetro. Si ese carácter no está disponible en la cadena, el índice devuelto sería -1.
+
+IndexOf (char c, int startindex)
+
+El método dado devolvería el índice de la primera aparición del carácter “c” después de que el índice entero pasara como el segundo parámetro “startindex”. Se ignorarán todas las ocurrencias del carácter ‘c’ antes del índice entero “startindex”.
+
+IndexOf (subcadena String)
+
+El método anterior devuelve el índice del primer carácter de la subcadena pasado como un parámetro a él. Si esa subcadena no está disponible en la cadena, el índice devuelto sería -1.
+
+IndexOf (subcadena String, int startindex)
+
+Este método Java devuelve el índice del primer carácter en la subcadena pasada como el primer parámetro, después del valor del índice “startindex”. Si la subcadena comienza desde el valor entero pasado de “startindex”, esa subcadena sería ignorada.
+
+Ejemplo
+
+public class Sample_String {   
+public static void main(String args[]) {        
+String str_Sample = "Este es el índice del ejemplo";   
+// Carácter en la posición      
+System.out.println("Índice de caracteres 'x':" + str_Sample.indexOf('x'));       
+// Carácter en la posición después del valor de índice dado    
+System.out.println("Índice de caracteres 'después del índice 3:" + str_Sample.indexOf(' s ', 3));   
+// Dar posición de índice para la subcadena dada      
+System.out.println("Índice de subcadena 'es':" + str_Sample.indexOf("es"));     
+// Dar posición de índice para la subcadena dada y comenzar el índice     
+System.out.println("Index of substring 'es' form index:" + str_Sample.indexOf("es", 5));   
+}
+}
+
+
+
+
+
+
+***************
+public class Sample_String {   
+    public static void main(String args[]) {        
+  
+        String str_Sample = "Este es el índice del ejemplo";   
+  
+        // Carácter en la posición      
+        System.out.println("Índice de caracteres 'x':" + str_Sample.indexOf('x'));       
+  
+        // Carácter en la posición después del valor de índice dado    
+        System.out.println("Índice de caracteres 'después del índice 3:" + str_Sample.indexOf(' s ', 3));   
+  
+        // Dar posición de índice para la subcadena dada      
+        System.out.println("Índice de subcadena 'es':" + str_Sample.indexOf("es"));     
+  
+        // Dar posición de índice para la subcadena dada y comenzar el índice     
+        System.out.println("Index of substring 'es' form index:" + str_Sample.indexOf("es", 5));   
+    }
+}
+Salida:
+
+Índice del carácter “x”: 12
+Índice del carácter “después del índice 3: 3
+Índice de la subcadena” es “: 2
+Índice de la subcadena” es “índice del formulario: 5
+
+
+
+MÉTODO EQUALS:
+--------------
+
+String.equals() 
+ 
+Descripción
+Compara la cadena de texto contra un objeto. Devolverá true si las cadenas comparadas son iguales. En caso contrario devolverá false.
+
+Sintaxis
+public boolean equals(Object anObject)
+Parámetros
+Object anObject,
+Clase Padre
+String
+
+Ejemplo
+String sCadena1 = new String("Avila");
+String sCadena2 = new String("Salamanca");
+String sCadena3 = new String("Avila");
+		
+if (sCadena1.equals(sCadena2))
+ System.out.println(sCadena1 + " y " + sCadena2 + " son IGUALES");
+else
+ System.out.println(sCadena1 + " y " + sCadena2 + " son DIFERENTES");
+	
+if (sCadena1.equals(sCadena3))
+ System.out.println(sCadena1 + " y " + sCadena3 + " son IGUALES");
+else
+ System.out.println(sCadena1 + " y " + sCadena3 + " son DIFERENTES");
+
+Problemas en los que podría usarse:
+Buscar un objeto en un array
+Tipo de Objeto Boolean
+Criptografía: Algoritmos de Digestión de Mensajes
+Usando las clases HashSet y HashMap
+Validador de RUT en Java
+Ventanas con estilo gracias a Substances
+Palíndromos en Java con reverse
+Lectura de datos en Java con Scanner
+
+
+
+MÉTODO REPLACE Y REPLACEALL:
+---------------------------
+
+
+
+Java String tiene tres tipos de método Reemplazar
+
+reemplazar
+reemplaza todo
+replaceFirst
+Con la ayuda de estos puede reemplazar caracteres en su cadena. Vamos a estudiar cada uno en detalle:
+
+1. Método de reemplazo ()
+Descripción:
+
+Este método Java devuelve una nueva cadena resultante de reemplazar cada aparición de caracteres con un nuevo carácter
+
+Sintaxis:
+
+public Str replace(char oldC, char newC)
+1
+public Str replace(char oldC, char newC)
+Parámetros:
+
+oldCh – viejo personaje.
+
+
+
+
+newCh – nuevo personaje.
+
+Valor de retorno
+
+Esta función devuelve una cadena reemplazando oldCh con newCh.
+
+Ejemplo 1
+
+public class Guru99Ex1 {
+public static void main(String args[]) {
+String S1 = new String("the quick fox jumped");
+System.out.println("Original String is ': " + S1);
+System.out.println("String after replacing 'fox' with 'dog': " + S1.replace("fox", "dog"));
+System.out.println("String after replacing all 't' with 'a': " + S1.replace('t', 'a'));
+}
+}
+1
+2
+3
+4
+5
+6
+7
+8
+9
+public class Guru99Ex1 {
+    public static void main(String args[]) {
+        String S1 = new String("the quick fox jumped");
+        System.out.println("Original String is ': " + S1);
+        System.out.println("String after replacing 'fox' with 'dog': " + S1.replace("fox", "dog"));
+        System.out.println("String after replacing all 't' with 'a': " + S1.replace('t', 'a'));
+ 
+    }
+}
+Salida:
+
+Original String is ‘: el zorro rápido saltó
+String después de reemplazar’ fox ‘por’ dog ‘: el perro rápido saltó
+String después de reemplazar todo’ t ‘por’ a ‘: ahe quick zorro saltó
+
+2. Reemplazar todo ()
+Descripción
+
+
+El método java string replaceAll () devuelve una cadena que reemplaza toda la secuencia de caracteres que coinciden con la expresión regular y la cadena de reemplazo.
+
+Firma:
+
+public Str replaceAll(String regex, String replacement)
+1
+public Str replaceAll(String regex, String replacement)
+Parámetros:
+
+regx: expresión regular
+
+reemplazo: secuencia de reemplazo de caracteres
+
+Ejemplo 2
+
+public class Guru99Ex2 {
+public static void main(String args[]) {
+String str = "Guru99 is a site providing free tutorials";
+//remove white spaces
+String str2 = str.replaceAll("\\s", "");
+System.out.println(str2);
+}
+}
+1
+2
+3
+4
+5
+6
+7
+8
+public class Guru99Ex2 {
+    public static void main(String args[]) {
+        String str = "Guru99 is a site providing free tutorials";
+        //remove white spaces
+        String str2 = str.replaceAll("\\s", "");
+        System.out.println(str2);
+    }
+}
+Salida:
+
+Guru99issueproporcionarTutorialesfreet
+
+3. Java – Método String replaceFirst ()
+Descripción
+
+El método reemplaza la primera subcadena de la cadena dada que coincide con esa expresión regular.
+
+Sintaxis
+
+public Str replaceFirst(String rgex, String replacement)
+1
+public Str replaceFirst(String rgex, String replacement)
+Parámetros
+
+rgex – la expresión regular a la cual la cadena dada necesita coincidir.
+
+reemplazo: la cadena que reemplaza la expresión regular.
+
+Valor de retorno
+
+Este método devuelve String resultante como salida.
+
+Ejemplo 3:
+
+Java
+public class Guru99Ex2 {
+public static void main(String args[]) {
+String str = "This website providing free tutorials";
+//Only Replace first 's' with '9' 
+String str1 = str.replaceFirst("s", "9");
+System.out.println(str1);
+}
+}
+1
+2
+3
+4
+5
+6
+7
+8
+public class Guru99Ex2 {
+    public static void main(String args[]) {
+        String str = "This website providing free tutorials";
+        //Only Replace first 's' with '9' 
+        String str1 = str.replaceFirst("s", "9");
+        System.out.println(str1);
+    }
+}
+
+
+SC(ENTRADA Y SALIDA DE DATOS):
+-----------------------------
+import java.util.Scanner; --->para importar el scanner dentro del paquete
+
+Scanner sc=new Scanner (System.in);-->para llamar al scanner dentro de la clase
+
+sc.nextInt()-->para leer int
+sc.nextLine()-->para leer String
+
+
+OPTIONPANE (ENTRADA Y SALIDA DE DATOS):
+--------------------------------------
 import javax.swing.JOptionPane;
 public class PruebaApp {
  
