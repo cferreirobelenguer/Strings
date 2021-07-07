@@ -1297,3 +1297,35 @@ Resumen
 Los métodos showMessageDialog y showInputDialog de JOptionPane son un poco avanzados para la altura de nuestro curso actual pero son la forma más simple de entrada y salida de información para nuestros proximos tutoriales.
 
 Aquí podemos ver el poder de la programación orientada a objetos donde componentes sofisticados se pueden manejar de una forma sencilla. JOptionPane oculta toda la complejidad en el manejo de estas ventanas.
+
+
+
+
+
+
+TOCHARARRAY():
+-------------
+Como pasar un String a char array: Mediante el método toCharArray() convertimos una cadena de caracteres String en un array de caracteres.
+
+Descripción
+Convierte una cadena en un array de caracteres.
+
+Sintaxis
+public char[] toCharArray()
+Clase Padre
+String
+
+Ejemplo
+String sCadena = "Esto es una cadena de texto";
+char[] aCaracteres = sCadena.toCharArray();
+
+for (int x=0;x<aCaracteres.length;x++)
+  System.out.println("[" + x + "] " + aCaracteres[x]);
+  
+  
+Se podría usar por ejemplo para los siguientes casos:
+
+Como obtener la raíz cuadrada de un número con Java
+Contar las vocales de un fichero en Java
+String: Primera letra de cada palabra en mayúscula
+Convertir una cadena en un array de caracteres con Java
