@@ -1,0 +1,37 @@
+
+/*Dado dos String a y b devolver un nuevo String con el primer
+ * carácter del String a y el último de la cadena b.
+ * Si alguno de ellos tiene longitud nula se añadirá @
+ */
+
+
+public class ejercicio1A {
+static String palabranueva="";
+	public static void crearPalabra(String palabra1,String palabra2) {
+		if ((palabra1.length()>=0)) {
+			palabra1=palabra1.substring(0,1);
+			
+		}
+		if(palabra2.length()>=0){
+			palabra2=palabra2.substring(palabra2.length()-1);	
+		}
+		if(palabra1==""){ 	
+			palabra1="@";	
+			
+		}
+		if(palabra2=="") {
+			palabra2="@";
+		}
+		palabranueva=palabra1+palabra2;
+		System.out.println(palabranueva);
+	}
+
+
+	public static void main(String[] args) {
+		String palabra1="last";
+		String palabra2="chars";
+		ejercicio1A.crearPalabra(palabra1, palabra2);
+
+	}
+
+}
