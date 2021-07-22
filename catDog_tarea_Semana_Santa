@@ -1,0 +1,48 @@
+
+
+/*Dado un String devolver true si aparecen el mismo
+ * número de veces el string "cat" y "dog" */
+ 
+
+import java.util.Scanner;
+
+public class ejercicio1B {
+static Scanner sc=new Scanner(System.in);
+	
+	static int contadorCat;
+	static int contadorDog;
+	static boolean sonIguales;
+	public static void catDog(String str,String Caracter1,String Caracter2) {
+	if((str.contains(Caracter1))&&(str.contains(Caracter2))){
+		int posicioncat=str.indexOf(Caracter1);
+		while(posicioncat!=-1) {
+			contadorCat++;
+			posicioncat=str.indexOf(Caracter1,posicioncat+1);
+		}
+		int posiciondog=str.indexOf(Caracter2);
+		while(posiciondog!=-1) {
+			contadorDog++;
+			posiciondog=str.indexOf(Caracter2,posiciondog+1);
+		}
+		if (contadorCat==contadorDog){
+			sonIguales=true;
+			System.out.println("cat y dog se repiten igual [true si sí y false si no] "+sonIguales);
+		
+		}else {
+			sonIguales=false;
+			System.out.println("cat y dog se repiten igual [true si sí y false si no] "+sonIguales);
+		}
+		}else {
+			System.out.println("No se puede ejecutar la operación porque no se encuentran los caracteres");
+		}
+	}
+	public static void main(String[] args) {
+		String str="catdogcatdogcatdog";
+		System.out.println("Introduce un caracter a buscar");
+		String Caracter1=sc.next();
+		System.out.println("Introduce un segundo caracter a buscar");
+		String Caracter2=sc.next();
+		ejercicio1B.catDog(str, Caracter1, Caracter2);
+	}
+
+}
