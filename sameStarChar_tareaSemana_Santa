@@ -1,0 +1,40 @@
+
+/*C) Dado un String donde puede aparecer un o varios asterisco  devolver true si entre cada asterisco hay dos letras iguales.   Si no hay asteriscos se devolverá true igualmente. O si solo hay asteriscos  al principio o al final.
+
+public boolean sameStarChar(String str)
+
+http://codingbat.com/prob/p194491  (Enlace)
+
+Ejemplos:
+
+sameStarChar("xy*yzz")→true
+sameStarChar("xy*zzz")→false
+sameStarChar("*xa*az") → true
+*/
+
+public class ejercicio1C {
+	
+	static boolean sonIguales;
+	public static void SameStarChar(String str) {
+		int posicionAsterisco=str.indexOf("*");
+		int posicionAnterior=posicionAsterisco-1;
+		int posicionPosterior=posicionAsterisco+1+1;
+		System.out.println("El caracter anterior al asterisco es "+str.substring(posicionAnterior,posicionAsterisco));
+		System.out.println("El caracter posterior al asterisco es "+str.substring(posicionAsterisco+1,posicionPosterior));
+		
+		if ((str.substring(posicionAnterior,posicionAsterisco)).equals(str.substring(posicionAsterisco+1,posicionPosterior))) {
+			sonIguales=true;
+			System.out.println("¿Los caracteres son iguales? [true si es verdad y false si es falso ] "+sonIguales);
+		}else {
+			sonIguales=false;
+			System.out.println("¿Los caracteres son iguales? [true si es verdad y false si es falso ] "+sonIguales);
+		}
+		
+	}
+	public static void main(String[] args) {
+		String str="xy*yzz";
+		ejercicio1C.SameStarChar(str);
+
+	}
+
+}
