@@ -2120,3 +2120,61 @@ Dado que Arrays.toString () está sobrecargado para la matriz de la clase Object
 
 ¿Por qué Object.toString () no funciona para matrices?
 Es posible que el método toString () en matrices no funcione. Considera una matriz como un objeto típico y devuelve una cadena predeterminada, es decir, un '[' que representa una matriz, seguido de un carácter que representa el tipo de datos primitivo de la matriz seguido de un código hexadecimal de identidad
+
+
+
+
+
+
+MÉTODOS CHARACTER(CHARACTER.ISUPPERCASE, CHARACTER.ISLOWERCASE, CHARACTER.ISDIGIT, CHARACTER.ISALPHANUMERIC
+
+
+for(int i=0;i<contraseñaprimera.length();i++) {
+
+			letra2=contraseñaprimera.charAt(i);
+			
+				if(Character.isUpperCase(letra2)) {
+				
+					hayMayusculas2=true;
+					
+				}else if(Character.isLowerCase(letra2)){
+				
+					hayMinusculas2=true;
+					
+				}else if(Character.isDigit(letra2)) {
+				
+					hayDigito2=true;
+					
+					
+				}
+			
+			}
+   
+   CHARACTER.ISUPPERCASE: se utiliza para ver si en una cadena de caracteres hay alguna mayúscula.
+   
+			letra2=contraseñaprimera.charAt(i);
+			
+				if(Character.isUpperCase(letra2)) {
+				
+					hayMayusculas2=true;
+					
+CHARACTER.ISLOWERCASE: se utiliza para ver si en una cadena de caracteres hay alguna minúscula.
+
+			}else if(Character.isLowerCase(contraseñaprimera.charAt(i))){
+				
+					hayMinusculas2=true;
+					
+CHARACTER.ISDIGIT: se utiliza para ver si en una cadena de caracteres hay digitos.
+	
+			}else if(Character.isDigit(contraseñaprimera.charAt(i))) {
+				
+					hayDigito2=true;
+					
+					
+				}
+				
+CHARACTER.ISALPHANUMERIC: se usa para ver si en una cadena de caracteres es alphanumérica
+
+			Character.isalphanumeric(contraseñaprimera.charAt(i))){
+			
+					
