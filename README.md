@@ -968,6 +968,7 @@ Lectura de datos en Java con Scanner
 
 
 
+
 MÉTODO REPLACE Y REPLACEALL:
 ---------------------------
 
@@ -1361,6 +1362,7 @@ Remplazar caracteres con Java
 
 
 Método String charAt ():
+__________________________
 
 ¿Por qué usar el método de cadena “chatAt”?
 
@@ -1457,6 +1459,7 @@ Website
 
 
 StringBuilder:
+__________________
 
 
 Java StringBuilder - StringBuffer
@@ -2172,6 +2175,17 @@ CHARACTER.ISDIGIT: se utiliza para ver si en una cadena de caracteres hay digito
 					
 					
 				}
+				
+COMO SABER SI UNA CADENA DE CARACTERES CONTIENE DIGITOS:CON TOCHARARRAY() EN BUCLE FOREACH E ISDIGIT()
+_______________________________________________________________________________________________________
+
+for (char i:contraseña.toCharArray()) {
+				if(Character.isDigit(i)) {
+					contieneNumeros=true;
+				}else {
+					contieneNumeros=false;
+				}
+			}
 				
 CHARACTER.ISALPHANUMERIC: se usa para ver si en una cadena de caracteres es alphanumérica
 
