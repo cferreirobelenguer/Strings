@@ -1,0 +1,40 @@
+
+//EJERCICIO EXAMEN FINAL CONVOCATORIA ORDINARIA
+
+/* D) Realizar una función que devuelva un string donde se hayan suprimido los caracteres que hay entre paréntesis en la cadena pasada como parámetro. Se supone que, o no hay paréntesis, o hay solo un paréntesis de abrir y otro de cerrar.
+static public String quitarParentesis( String cadena) {
+..
+}
+Ejemplo:
+quitarParentesis ("Hola Pepe (jose) ¿como estás?")  -> "Hola Pepe ¿como estás?"
+quitarParentesis ("Hola Pepe")  → "Hola Pepe"
+quitarParentesis ("Vaya ejercicio(es un rollo) que interesante")  → "Vaya ejercicio que interesante"
+ */
+
+package examen2021;
+
+import java.util.Scanner;
+
+public class parentesis {
+static Scanner sc=new Scanner(System.in);
+static String frase;
+static int posicion1;
+static int posicion2;
+static String palabra;
+	
+	public static void extraerPalabra() {
+		
+		if((frase.contains("("))||(frase.contains(")"))){
+			posicion1=frase.indexOf("(");
+			posicion2=frase.indexOf(")");
+			palabra=frase.substring(((posicion1)+1),((posicion2)));
+			System.out.println(palabra);
+		}else {
+			System.out.println(frase);
+		}
+	}
+	public static void main(String[] args){
+		frase=("Vaya ejercicio(es un rollo) que interesante");
+		parentesis.extraerPalabra();
+	}
+}
