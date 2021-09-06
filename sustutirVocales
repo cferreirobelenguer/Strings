@@ -1,0 +1,37 @@
+//EJERCICIO EXAMEN FINAL ORDINARIA 2021
+
+/* (1.5 Puntos)
+C) Realizar una función que devuelva un string donde se cambie las letras vocales por el carácter que se indique como parámetro. Para simplificar el ejercicio podéis suponer que solo existen vocales en minúsculas y sin acentos.
+static public String cambiarVocales( String cadena, char nuevaletra) {
+..
+}
+Ejemplo:
+cambiarVocales ("Hola Pepe",’*’)  -> "H*l* P*p*"
+cambiarVocales ("Hola Pepe",’-’)  -> "H-l- P-p-"
+*/
+
+package examen2021;
+
+import java.util.Scanner;
+
+public class apartadoC {
+static Scanner sc=new Scanner(System.in);
+
+static String palabra;
+static String resultado;
+static String caracterAsustituir;
+	public static void cambiarVocales() {
+		System.out.println("Indique el caracter con el que va a sustutir las vocales");
+		caracterAsustituir=sc.next();
+		resultado=palabra.replaceAll("[aeiouAEIOU]", caracterAsustituir);
+		
+	}
+	public static void main(String[] args) {
+		palabra="Hola Mundo";
+		apartadoC.cambiarVocales();
+		System.out.println(resultado);
+		
+
+	}
+
+}
