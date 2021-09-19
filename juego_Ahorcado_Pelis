@@ -1,0 +1,95 @@
+
+
+
+//JUEGO DEL AHORCADO DE PELIS
+
+package ecoClienteServidor;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class MiniAhorcado {
+static Scanner sc=new Scanner(System.in);
+
+static String palabrasAcertadas="";
+static String letra="";
+
+	public static void esconderPeli(String pelicula,String pelicula1,String palabra) {
+		int largo=pelicula.length();
+		int contador1=0;
+		pelicula1=pelicula;
+		while(contador1!=largo) {
+			for(int i=0;i<=pelicula1.length()-1;i++) {
+			char palabra1=pelicula1.charAt(i);
+			String palabra2=String.valueOf(palabra1);
+			
+			pelicula1=pelicula1.replaceAll(palabra2,"x");
+			
+			}
+			palabra=pelicula1;
+			contador1++;
+		}
+		System.out.println("La palabra se ha escondido: "+palabra);
+	
+		
+		int contador=0;
+		System.out.println("Tienes 10 oportunidades,¡Listos!");
+		System.out.println("Introduce una letra:");
+		
+		while(contador!=5) {
+			letra=sc.nextLine();
+			
+			if(pelicula.indexOf(letra)>=0) {
+				int posicion=pelicula.indexOf(letra);
+				
+				while(posicion!=-1) {
+					System.out.println("¡Bien!, acertaste la letra");
+					char letra1=letra.charAt(0);
+					char[]arrayLetras=palabra.toCharArray();
+					arrayLetras[posicion]=letra1;
+					palabrasAcertadas+=letra;
+					System.out.println(arrayLetras);
+					posicion=pelicula.indexOf(letra,posicion+1);
+					
+				}
+				
+				
+			}else if(pelicula.indexOf(letra)==-1){
+				
+				System.out.println("La letra que has introducido no se encuentra en el título de la peli");
+			}
+		
+			contador++;
+		}
+		
+		System.out.println("¡Fin de las oportunidades!");
+		System.out.println("El total de letras acertadas es: "+palabrasAcertadas);
+	}
+	public static void adivinarPeli(String pelicula) {
+		System.out.println("Ahora te toca adivinar la peli...");
+		System.out.println("¿De qué peli se trata?");
+		String peli="";
+		String palabra="";
+		
+		peli=sc.nextLine();
+		if(peli.equals(pelicula)) {
+			System.out.println("¡Enhorabuena!,has adivinado la peli");
+		}else {
+			System.out.println("Lo siento, no has acertado la peli");
+		}
+	}
+	public static void main(String[] args) {
+		
+		System.out.println("Bienvenido al juego del ahorcado");
+		System.out.println("_________________________________");
+		System.out.println("Introduce la película a adivinar:");
+		String pelicula=sc.nextLine();
+		String pelicula1="";
+		String palabra="";
+		
+		MiniAhorcado.esconderPeli(pelicula,pelicula1,palabra);
+		
+		MiniAhorcado.adivinarPeli(pelicula);
+		
+	}
+
+}
